@@ -1,12 +1,12 @@
-#ScriptingWithJava.sh
+# ScriptingWithJava.sh
 
 ScriptingWithJava is a shellscript helping you to make Java usable as a scripting language. 
 
-##Goal
+## Goal
 
 Typical production servers do not provide tools like maven or gradle meanwhile OpenJDK is available. So edit and recompile Java programs in SSH-Sessions is possible but unhandy.
 
-##Requirements
+## Requirements
 
 - You are willing to deploy you Java application in source form as .java files.
 - All your java files exits in a flat folder.
@@ -15,11 +15,11 @@ Typical production servers do not provide tools like maven or gradle meanwhile O
 - The App-Name defined as $PROG must match the Name of the public class.
 - The public class must contain the public static void main method. 
 
-##Functional principle
+## Functional principle
 
 When this script is called, it compares the change date of the Java program with the compiled jar (or class) file and decides if a recompile/rebuild is necessary before execution.
 
-##TODO
+## TODO
 
 - Support for additional jar files (dependencies)
 - Support for non existing Package-Name (default package)
