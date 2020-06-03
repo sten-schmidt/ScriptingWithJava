@@ -11,9 +11,7 @@ Typical production servers do not provide tools like maven or gradle meanwhile O
 - You are willing to deploy you Java application in source form as .java files.
 - All your java files exits in a flat folder.
 - All classes are member of the same package. 
-- Only one class can be declared public.
-- The App-Name defined as $PROG must match the Name of the public class.
-- The public class must contain the public static void main method. 
+- The App-Name defined as $PROG must match the Name of the public class providing the public static void main method.
 
 ## Functional principle
 
