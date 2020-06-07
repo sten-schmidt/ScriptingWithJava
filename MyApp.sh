@@ -1,4 +1,4 @@
-#/bin/env bash
+#!/bin/env bash
 
 # Load ScriptingWithJava functions and variables
 . ScriptingWithJava.sh
