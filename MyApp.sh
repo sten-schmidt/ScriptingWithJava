@@ -9,4 +9,4 @@ MODE="JAR" 		# JAR: a Jar-File ($PROG.jar) is created, DIR: Class-Files are crea
 COMPILE=0  		# 0: Compile when necessary, 1: Compile on every run
 
 # Start your Java application 
-start
+start "$*"

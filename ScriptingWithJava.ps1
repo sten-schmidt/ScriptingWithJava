@@ -46,19 +46,24 @@ function Compile-App {
 }
 
 function Execute-App {
+    Param ([System.Array]$commandlineArgs)
+
     if($MODE -eq "JAR") {
         Write-Output "executing jar..."
-        Invoke-Expression "java -jar `"$PROG.jar`""
+        Invoke-Expression "java -jar `"$PROG.jar`" `"$commandlineArgs`"" 
+       
     }
 
     if($MODE -eq "DIR") {
         Write-Output "executing class..."
-        Invoke-Expression "java -cp `"./$PROG`" `"$PACKAGE.$PROG`""
+        Invoke-Expression "java -cp `"./$PROG`" `"$PACKAGE.$PROG`" `"$commandlineArgs`""
     }
 }
 
-function Start-App {
+function Start-App() { 
+    Param ([System.Array]$commandlineArgs)
+
     Init-App
-    Compile-App
-    Execute-App
+    Compile-App 
+    Execute-App -commandlineArgs $commandlineArgs
 }

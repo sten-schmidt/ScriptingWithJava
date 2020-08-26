@@ -41,21 +41,19 @@ compile() {
 }
 
 execute() {
-
     if [ "$MODE" = "JAR" ]; then
         echo "executing jar..."
-        java -jar "$PROG.jar"
+        java -jar "$PROG.jar" "$*"
     fi
 
     if [ "$MODE" = "DIR" ]; then
         echo "executing class..."
-        java -cp "./$PROG" "$PACKAGE.$PROG"
+        java -cp "./$PROG" "$PACKAGE.$PROG" "$*"
     fi
 }
-
 
 start() {
 	init
 	compile
-	execute
+	execute "$*"
 }
